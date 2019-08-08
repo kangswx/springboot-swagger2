@@ -20,7 +20,9 @@ public class UserController {
      * @param id
      * @return
      */
+    //ApiOperation生成的接口的API描述信息
     @ApiOperation(value = "查询用户信息", notes = "根据url的id来查询用户详细信息")
+    //ApiImplicitParam生成的接口参数的API描述信息
     @ApiImplicitParam(name="id", value = "用户的id", required = true, dataType = "int", paramType = "path")
     @GetMapping(value = "{id}")
     public Object getById(@PathVariable int id){
@@ -33,7 +35,9 @@ public class UserController {
      * @param user
      * @return
      */
+    //ApiOperation生成的接口的API描述信息
     @ApiOperation(value = "修改用户信息", notes = "根据传入对象的非空字段值和id修改用户信息")
+    //ApiImplicitParam生成的接口参数的API描述信息
     @ApiImplicitParam(name = "user", value = "用户对象", required = true, dataType = "Json", paramType = "body")
     @PutMapping()
     public Object updateUserById(@RequestBody User user){
@@ -52,7 +56,9 @@ public class UserController {
      * @param user
      * @return
      */
+    //ApiOperation生成的接口的API描述信息
     @ApiOperation(value = "新增用户", notes = "将传入的用户对象添加到数据库")
+    //ApiImplicitParam生成的接口参数的API描述信息
     @ApiImplicitParam(name = "user", value = "用户对象", required = true, dataType = "Json", paramType = "body")
     @PostMapping()
     public Object addUser(@RequestBody User user){
@@ -71,7 +77,9 @@ public class UserController {
      * @param id
      * @return
      */
+    //ApiOperation生成的接口的API描述信息
     @ApiOperation(value = "删除用户", notes = "根据url的id来删除数据库中对应的用户")
+    //ApiImplicitParam生成的接口参数的API描述信息
     @ApiImplicitParam(name="id", value = "用户的id", required = true, dataType = "int", paramType = "path")
     @DeleteMapping("{id}")
     public Object deleteUser(@PathVariable int id){
